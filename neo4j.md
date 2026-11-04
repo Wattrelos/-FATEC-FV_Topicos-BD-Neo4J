@@ -9,7 +9,7 @@
 # 📘 Guia Teórico: Fundamentos do Neo4j e Bancos Orientados a Grafos
 
 > [!NOTE]
-> Este documento fornece a fundamentação conceitual, arquitetural e comparativa do **Neo4j**. Para o roteiro prático com Docker e comandos executáveis, consulte o [README.md](file:///var/www/html/topicos-bd/neo4j/README.md). Para o estudo de caso aplicado à área da saúde e genômica, consulte [neo4j-pesquisas-medicas.md](file:///var/www/html/topicos-bd/neo4j/neo4j-pesquisas-medicas.md).
+> Este documento fornece a fundamentação conceitual, arquitetural e comparativa do **Neo4j**. Para o roteiro prático com Docker e comandos executáveis, consulte o [README.md](/README.md). Para o estudo de caso aplicado à área da saúde e genômica, consulte [neo4j-pesquisas-medicas.md](/neo4j-pesquisas-medicas.md).
 
 ---
 
@@ -142,7 +142,7 @@ mindmap
    - Visualização da infraestrutura corporativa: servidores, contêineres, microsserviços, filas e bancos de dados, permitindo simular instantaneamente o impacto da queda de um roteador ou servidor.
 
 5. **Bioinformática, Saúde e Pesquisa Médica:**
-   - Unificação de silos de prontuários, interações medicamentosas, vias metabólicas e mutações genéticas em *Medical Knowledge Graphs* (ver [estudo aprofundado](file:///var/www/html/topicos-bd/neo4j/neo4j-pesquisas-medicas.md)).
+   - Unificação de silos de prontuários, interações medicamentosas, vias metabólicas e mutações genéticas em *Medical Knowledge Graphs* (ver [estudo aprofundado](/neo4j-pesquisas-medicas.md)).
 
 ---
 
@@ -180,5 +180,5 @@ ORDER BY amigo.nome ASC;
 ---
 
 ## 🔗 Referências e Próximos Passos
-- Para praticar todos esses conceitos em um ambiente local com contêineres Docker, execute o [README.md - Atividade Prática com Neo4j](file:///var/www/html/topicos-bd/neo4j/README.md).
-- Para compreender a aplicação prática do Neo4j na área de oncologia, farmacovigilância e bioinformática, leia [neo4j-pesquisas-medicas.md](file:///var/www/html/topicos-bd/neo4j/neo4j-pesquisas-medicas.md).
+- Para praticar todos esses conceitos em um ambiente local com contêineres Docker, execute o [README.md - Atividade Prática com Neo4j](/README.md).
+- Para compreender a aplicação prática do Neo4j na área de oncologia, farmacovigilância e bioinformática, leia [neo4j-pesquisas-medicas.md](/neo4j-pesquisas-medicas.md).

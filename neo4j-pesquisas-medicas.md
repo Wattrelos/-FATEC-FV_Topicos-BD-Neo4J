@@ -10,8 +10,8 @@
 
 > [!NOTE]
 > Este artigo técnico explora como o banco de dados orientado a grafos **Neo4j** é empregado por centros de pesquisa, hospitais de alta complexidade e empresas farmacêuticas para cruzar dados clínicos, genômicos e farmacológicos.
-> - Para configurar o ambiente local com Docker e praticar os comandos Cypher deste artigo, consulte o [README.md - Atividade Prática](file:///var/www/html/topicos-bd/neo4j/README.md).
-> - Para a fundamentação teórica sobre nós, arestas e arquitetura de grafos, consulte o [neo4j.md - Guia Teórico](file:///var/www/html/topicos-bd/neo4j/neo4j.md).
+> - Para configurar o ambiente local com Docker e praticar os comandos Cypher deste artigo, consulte o [README.md - Atividade Prática](/README.md).
+> - Para a fundamentação teórica sobre nós, arestas e arquitetura de grafos, consulte o [neo4j.md - Guia Teórico](/neo4j.md).
 
 ---
 
@@ -253,5 +253,5 @@ O uso do Neo4j na área biomédica representa uma mudança de paradigma: da medi
 ---
 
 ## 🔗 Leituras Complementares
-- Pratique as consultas executando o ambiente local: [README.md - Roteiro com Docker](file:///var/www/html/topicos-bd/neo4j/README.md)
-- Aprofunde-se nos fundamentos matemáticos e estruturais: [neo4j.md - Guia Teórico](file:///var/www/html/topicos-bd/neo4j/neo4j.md)
+- Pratique as consultas executando o ambiente local: [README.md - Roteiro com Docker](/README.md)
+- Aprofunde-se nos fundamentos matemáticos e estruturais: [neo4j.md - Guia Teórico](/neo4j.md)
