@@ -1,0 +1,23 @@
+# version: '3.8' Não se usa mais
+
+services:
+  neo4j:
+    image: neo4j:latest
+    container_name: meu_neo4j
+    ports:
+      - "7474:7474" # Porta para a interface web (Neo4j Browser)
+      - "7687:7687" # Porta para conexões de drivers/código (protocolo Bolt)
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+      - neo4j_import:/var/lib/neo4j/import
+      - neo4j_plugins:/plugins
+    environment:
+      - NEO4J_AUTH=neo4j/senha_segura_123 # Altere "senha_segura_123" para a senha que desejar
+      - NEO4J_PLUGINS=["apoc"] # Opcional: Instala automaticamente a biblioteca de funções extras APOC
+
+volumes:
+  neo4j_data:
+  neo4j_logs:
+  neo4j_import:
+  neo4j_plugins:
