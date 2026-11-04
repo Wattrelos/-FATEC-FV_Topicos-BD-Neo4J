@@ -97,12 +97,25 @@ No Brasil, toda investigação biomédica obedece às **Resoluções CNS 466/201
 Mesmo com bases devidamente pseudonimizadas, uma falha de governança interna ou um operador desonesto pode comprometer todo o sistema de saúde. A governança baseia-se em **controles lógicos e rastreabilidade estrita**:
 
 ```mermaid
-graph LR
-    subgraph "Camadas de Acesso Qualificado"
-        U["Pesquisador Clínico"] -->|Autenticação Forte 2FA / ICP-Brasil| GW["API Gateway / Proxy"]
-        GW -->|Verificação de Privilégio Mínimo (RBAC)| DB[("Neo4j Database")]
-        DB -->|Registro Assíncrono| WORM["Cofre de Logs WORM / SIEM<br/>(Imutável & Criptografado)"]
+graph TD
+    subgraph Entrada [1. Camadas de Acesso Qualificado]
+        U[ Pesquisador Clínico ] -->|1. Autenticação Forte 2FA / ICP-Brasil| GW[ API Gateway / Proxy ]
+        GW -->|"2. Verificação de Privilégio Mínimo (RBAC)"| DB[( Neo4j Database )]
+        DB -.->|3. Registro Assíncrono de Acesso| WORM["Cofre de Logs WORM / SIEM<br/>( Imutável & Criptografado )"]
     end
+
+    subgraph Saida [2. Camadas de Saída com Auditoria e Anonimização]
+        DB -->|4. Extração de Subgrafo| AN["Módulo de Anonimização<br/>( Mascaramento & K-Anonimato / LGPD )"]
+        AN -->|5. Dados Tratados / Desidentificados| GW
+        GW -->|6. Canal Criptografado TLS 1.3| U
+        GW -.->|7. Auditoria de Download e Exportação| WORM
+    end
+
+    %% Estilização para destacar o cofre de logs e auditoria
+    style WORM fill:#fff2cc,stroke:#d6b656,stroke-width:2px;
+    style AN fill:#dae8fc,stroke:#6c8ebf,stroke-width:2px;
+
+
 ```
 
 ### 2.1. Princípio do Privilégio Mínimo e Segregação de Funções (*Need-to-Know*)

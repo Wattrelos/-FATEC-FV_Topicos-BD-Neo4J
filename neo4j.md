@@ -65,13 +65,13 @@ A velocidade excepcional do Neo4j em consultas relacionais complexas decorre de 
 flowchart TD
     subgraph "RDBMS Tradicional (Custo de JOIN)"
         T1["Tabela A"] -->|Varredura de Índice B-Tree| PK1["Índice FK"]
-        PK1 -->|Lookup O(log N)| T2["Tabela B"]
-        T2 -->|Novo JOIN O(log M)| T3["Tabela C"]
+        PK1 -->|"Lookup O(log N)"| T2["Tabela B"]
+        T2 -->|"Novo JOIN O(log M)"| T3["Tabela C"]
     end
 
     subgraph "Neo4j (Index-Free Adjacency)"
-        NodeA["Nó A"] -->|Ponteiro Direto O(1)| NodeB["Nó B"]
-        NodeB -->|Ponteiro Direto O(1)| NodeC["Nó C"]
+        NodeA["Nó A"] -->|"Ponteiro Direto O(1)"| NodeB["Nó B"]
+        NodeB -->|"Ponteiro Direto O(1)"| NodeC["Nó C"]
     end
 ```
 
@@ -84,7 +84,7 @@ flowchart TD
   - `neostore.nodestore.db`: armazena os nós.
   - `neostore.relationshipstore.db`: armazena os relacionamentos como listas duplamente encadeadas.
   - `neostore.propertystore.db`: armazena propriedades primitivas e ponteiros para blocos de strings ou arrays dinâmicos.
-- O formato de tamanho fixo permite que o banco calcule o endereço exato do registro em bytes com aritmética de ponteiros imediata: $\text{Offset} = \text{ID} \times \text{Tamanho\_Registro}$.
+- O formato de tamanho fixo permite que o banco calcule o endereço exato do registro em bytes com aritmética de ponteiros imediata: `Offset = ID * Tamanho_Registro`
 
 ---
 
